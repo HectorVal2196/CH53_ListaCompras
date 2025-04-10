@@ -127,3 +127,43 @@ window.addEventListener("load",function(event){
     productosTotal.innerText = totalEnProductos;
     contadorProductos.innerText = cont;
 }); //window.addEventListener load
+
+//Agregar la funcionalidad del botón limpiar todo
+//Resumen
+//Tabla
+//Campos
+//Alerta
+//localstorage
+const btnLimpiarTodo = document.getElementById("btnClear");
+
+btnLimpiarTodo.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    // Limpiar variables
+    cont = 0;
+    costoTotal = 0;
+    totalEnProductos = 0;
+    datos = [];
+
+    // Limpiar resumen
+    contadorProductos.innerText = "";
+    productosTotal.innerText = "";
+    precioTotal.innerText = "$";
+    
+    // Limpiar tabla
+    cuerpoTabla.innerHTML = "";
+
+    // Limpiar campos del formulario
+    txtName.value = "";
+    txtName.style.border = "";
+    txtNumber.value = "";
+    txtNumber.style.border = "";
+
+    // Limpisr alertas
+    alertaValidacionesTexto.innerHTML = "";
+    alertaValidaciones.style.display = "none";
+
+    // Limpiar localStorage
+    localStorage.removeItem("datos");
+    localStorage.removeItem("resumen");
+});
